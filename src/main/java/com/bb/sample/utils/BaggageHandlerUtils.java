@@ -8,14 +8,14 @@ public class BaggageHandlerUtils {
 
 	public static void printTransitInfo(String baggageTagNum , BaggageConnection transitPath)
 	{
-		System.out.println(baggageTagNum+"->"+transitPath.getStartNode());
+		System.out.print(baggageTagNum+"->"+transitPath.getStartNode());
 		
 		for(BaggageNode transitNode : transitPath.getIntermediateNodes())
 		{
-			System.out.println("->"+transitNode);
+			System.out.print("->"+transitNode);
 		}
 		
-		System.out.println("->"+transitPath.getEndNode());
+		System.out.print("->"+transitPath.getEndNode());
 		System.out.println(": TIme "+transitPath.getTotalTransitTime());
 	}
 }

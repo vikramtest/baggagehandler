@@ -80,9 +80,10 @@ public class BaggageConnection {
 			return false;
 	}
 
+	@Override
 	public String toString()
 	{
-		return "Start "+startNode.nodeNumber+" -> end Node" + "transit time is " + totalTransitTime+" and nodes are "+intermediateNodes;
+		return "Start "+startNode.nodeNumber+" -> end Node"+endNode.nodeNumber  + "transit time is " + totalTransitTime+" and nodes are "+intermediateNodes;
 	}
 }
 

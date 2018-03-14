@@ -1,10 +1,12 @@
 package com.bb.sample.processor;
 
 import static org.junit.Assert.assertNotNull;
+
 import static org.junit.Assert.assertNull;
 import static org.mockito.Mockito.when;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +17,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import com.bb.sample.launch.BaggageHandlerMaster;
 import com.bb.sample.model.BaggageConnection;
 import com.bb.sample.model.BaggageNode;
-import com.sun.javafx.collections.MappingChange.Map;
+
 
 @RunWith(MockitoJUnitRunner.class)
 public class BaggageTransitProcessorFuncTest {
@@ -35,9 +37,9 @@ public class BaggageTransitProcessorFuncTest {
 		tempDeptNode.setStartNode(new BaggageNode("1"));
 		tempDeptNode.setEndNode(new BaggageNode("2"));
 		tempDeptNode.setTotalTransitTime(1);
-		((HashMap<BaggageConnection, BaggageConnection>) baggageInfo).put(tempDeptNode ,  tempDeptNode);
+		baggageInfo.put(tempDeptNode ,  tempDeptNode);
 
-		when(handlerFramework.getCollectionLink()).thenReturn((baggageInfo);
+		when(handlerFramework.getCollectionLink()).thenReturn((baggageInfo));
 		
 		assertNotNull(transitProcessor.getRouteBetweenNodes("001", tempDeptNode));	
 		

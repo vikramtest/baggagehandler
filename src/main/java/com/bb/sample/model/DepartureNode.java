@@ -1,5 +1,7 @@
 package com.bb.sample.model;
 
+import java.util.Objects;
+
 public class DepartureNode {
 
 	String flightNumber;
@@ -52,5 +54,19 @@ public class DepartureNode {
 		this.departureTime = departureTime;
 	}
 	
-	
+	@Override
+	public int hashCode() 
+	{
+		return Objects.hash(flightNumber);
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if(((DepartureNode)o).getFlightNumber().equals(flightNumber))
+				return true;
+		else
+			return false;
+	}
 }
+
