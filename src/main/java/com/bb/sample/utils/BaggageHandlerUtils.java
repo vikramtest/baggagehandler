@@ -16,6 +16,6 @@ public class BaggageHandlerUtils {
 		}
 		
 		System.out.print("->"+transitPath.getEndNode());
-		System.out.println(": TIme "+transitPath.getTotalTransitTime());
+		System.out.println(": Time "+transitPath.getTotalTransitTime());
 	}
 }

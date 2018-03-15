@@ -31,7 +31,7 @@ public class CSVFileLoaderTest {
 		throws IOException,FileNotFoundException
 	{
 		CSVFileLoader csvLoader = new CSVFileLoader();
-		List<String[]> fileData = csvLoader.readCSVFile("someName");
+		csvLoader.readCSVFile("someName");
 		
 	}
 }

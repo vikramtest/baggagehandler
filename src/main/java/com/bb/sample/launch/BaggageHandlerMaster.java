@@ -44,23 +44,23 @@ public class BaggageHandlerMaster {
 	 * node list is populated in newCollectionLink this is merged into
 	 * collectionLink.
 	 */
-	Map<BaggageConnection, BaggageConnection> collectionLink = new HashMap<>();
+	Map<BaggageConnection, BaggageConnection> collectionLink = new HashMap<BaggageConnection, BaggageConnection>();
 
 	/**
 	 * This field contains the Node->Node path which was created based on Config
 	 * data.
 	 */
-	Map<BaggageConnection, BaggageConnection> newCollectionLink = new HashMap<>();
+	Map<BaggageConnection, BaggageConnection> newCollectionLink = new HashMap<BaggageConnection, BaggageConnection>();
 
 	/**
 	 * This field contains the Departure Node List.
 	 */
-	Map<DepartureNode, DepartureNode> departureNodeList = new HashMap<>();
+	Map<DepartureNode, DepartureNode> departureNodeList = new HashMap<DepartureNode, DepartureNode>();
 
 	/**
 	 * This field contain unique List of all the BaggageNodes.
 	 */
-	Map<BaggageNode, BaggageNode> setOfNodes = new HashMap<>();
+	Map<BaggageNode, BaggageNode> setOfNodes = new HashMap<BaggageNode, BaggageNode>();
 
 	public Map<BaggageNode, BaggageNode> getSetOfNodes() {
 		return setOfNodes;
@@ -197,6 +197,7 @@ public class BaggageHandlerMaster {
 	 * 
 	 * @param inputConnection
 	 */
+	@SuppressWarnings("unchecked")
 	void checkForLinks(BaggageConnection inputConnection) {
 		for (BaggageConnection innerConn : collectionLink.keySet()) {
 			if (inputConnection == innerConn || (inputConnection.getStartNode().equals(innerConn.getEndNode())
@@ -217,7 +218,7 @@ public class BaggageHandlerMaster {
 				newConnection.setIntermediateNodes(copy);
 
 				newCollectionLink.put(newConnection, newConnection);
-				System.out.println(newConnection);
+				//System.out.println(newConnection);
 				checkForLinks(newConnection);
 			}
 
